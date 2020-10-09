@@ -7,7 +7,7 @@ import urllib
 @app.route('/')
 def index():
 	json_data = {'Hello': 'World!'}
-	webUrl = urllib.urlopen("https://www.youtube.com/user/guru99com")
+	webUrl = urllib.request.urlopen("https://www.youtube.com/user/guru99com")
 	data = webUrl.read()
 	return data
 
