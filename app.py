@@ -1,14 +1,15 @@
 """Flask App Project."""
 
-from flask import Flask, jsonify
+from flask import Flask
 app = Flask(__name__)
-
+import urllib2
 
 @app.route('/')
 def index():
-    """Return homepage."""
     json_data = {'Hello': 'World!'}
-    return jsonify(json_data)
+	webUrl = urllib2.urlopen("https://www.youtube.com/user/guru99com")
+	data = webUrl.read()
+    return data
 
 
 if __name__ == '__main__':
