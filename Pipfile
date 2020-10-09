@@ -5,8 +5,7 @@ name = "pypi"
 
 [packages]
 gunicorn = "*"
-flask = "*"
-urllib2 ="*"	
+flask = "*"	
 
 [dev-packages]
 
