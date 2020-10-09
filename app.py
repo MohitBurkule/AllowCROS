@@ -4,10 +4,10 @@ from flask import Flask
 app = Flask(__name__)
 import urllib
 
-@app.route('/')
+@app.route('/<path:url>')
 def index():
 	json_data = {'Hello': 'World!'}
-	webUrl = urllib.request.urlopen("https://www.youtube.com/user/guru99com")
+	webUrl = urllib.request.urlopen(url)
 	data = webUrl.read()
 	return data
 
