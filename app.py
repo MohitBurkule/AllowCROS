@@ -6,7 +6,8 @@ import urllib
 
 @app.route('/<path:url>')
 def index(url):
-	webUrl = urllib.request.urlopen(url, headers={'User-Agent': 'Mozilla/5.0'})
+	req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+	webUrl = urllib.request.urlopen(req)
 	data = webUrl.read()
 	return data
 
