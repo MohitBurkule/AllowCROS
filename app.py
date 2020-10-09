@@ -5,7 +5,7 @@ app = Flask(__name__)
 import urllib
 
 @app.route('/<path:url>')
-def index():
+def index(url):
 	json_data = {'Hello': 'World!'}
 	webUrl = urllib.request.urlopen(url)
 	data = webUrl.read()
