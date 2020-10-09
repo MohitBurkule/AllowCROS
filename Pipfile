@@ -11,3 +11,4 @@ flask = "*"
 
 [requires]
 python_version = "3.9.0"
+urllib2
