@@ -1,12 +1,12 @@
 """Flask App Project."""
 
-from flask import Flask
+from flask import Flask,request
 app = Flask(__name__)
 import urllib
 
 @app.route('/<path:url>')
 def index(url):
-	req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+	req = urllib.request.Request(url, headers=request.headers)
 	webUrl = urllib.request.urlopen(req)
 	data = webUrl.read()
 	return data
